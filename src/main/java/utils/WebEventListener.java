@@ -5,8 +5,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.WebDriverEventListener;
-import org.openqa.selenium.support.events.WebDriverListener;
-import pages.PageBase;
+
 import testcases.TestBases;
 
 public class WebEventListener extends TestBases implements WebDriverEventListener

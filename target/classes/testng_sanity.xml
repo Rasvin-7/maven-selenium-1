@@ -3,6 +3,7 @@
 <suite name="Sanity Test">
     <listeners>
         <listener class-name="utils.AllureListener"></listener>
+        <listener class-name="utils.WebEventListener"></listener>
     </listeners>
     <test name="Login Test">
         <classes>
