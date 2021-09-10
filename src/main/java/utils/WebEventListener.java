@@ -105,6 +105,7 @@ public class WebEventListener extends TestBases implements WebDriverEventListene
 
     }
 
+
     public void onException(Throwable throwable, WebDriver driver) {
 
     }
@@ -124,4 +125,6 @@ public class WebEventListener extends TestBases implements WebDriverEventListene
     public void afterGetText(WebElement element, WebDriver driver, String text) {
 
     }
+
+
 }

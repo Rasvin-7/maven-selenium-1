@@ -45,11 +45,13 @@ public class TestBases
         web_event = new WebEventListener();
         fire = new EventFiringWebDriver(driver);
         fire.register(web_event);
+        driver = fire;
 
         driver.get(url);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
     }
+//    Synchronized driver
     public static synchronized WebDriver getDriver()
     {
         return tDriver.get();

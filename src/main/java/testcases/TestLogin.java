@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 //import pages.LoginPage;
+import org.testng.log4testng.Logger;
 import pages.LoginPage;
 import utils.AllureListener;
 import utils.TestUtils;
@@ -19,7 +20,7 @@ public class TestLogin extends TestBases
 
 {
 //    public WebDriver driver;
-
+    public static Logger log = Logger.getLogger(TestLogin.class);
     public TestLogin()
     {
         super();
@@ -28,6 +29,7 @@ public class TestLogin extends TestBases
     @BeforeMethod
     public void setUp()
     {
+        log.info("Initializing driver");
         init_driver();
 //        driver.get(prop.getProperty("url"));
 //        driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
@@ -36,9 +38,9 @@ public class TestLogin extends TestBases
 
     @DataProvider
     public Object[][] getData(){
+        log.info("Data provider");
         TestUtils tu = new TestUtils();
         return tu.getSheetData("Login");
-
     }
 
     @Severity(SeverityLevel.BLOCKER)
