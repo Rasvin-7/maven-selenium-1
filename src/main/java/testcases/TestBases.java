@@ -2,6 +2,8 @@ package testcases;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
+import utils.WebEventListener;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,6 +15,9 @@ public class TestBases
     public static WebDriver driver;
     public static ThreadLocal<WebDriver> tDriver = new ThreadLocal<WebDriver>();
     public static Properties prop;
+    public static WebEventListener web_event;
+    private static EventFiringWebDriver fire;
+
     public TestBases()
     {
 
@@ -35,7 +40,12 @@ public class TestBases
         tDriver.set(driver);
 //        driver.get(url);
 //        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
         driver = getDriver();
+        web_event = new WebEventListener();
+        fire = new EventFiringWebDriver(driver);
+        fire.register(web_event);
+
         driver.get(url);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 

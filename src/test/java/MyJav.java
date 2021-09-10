@@ -1,17 +1,19 @@
+import java.util.ArrayList;
+
 public class MyJav
 {
     public static void main(String args[])
     {
-//        StringBuilder rev_a, a = new StringBuilder("1234");
-//        rev_a = a.reverse();
-//        System.out.println(rev_a);
-        String a = "1234";
-        char[] rev_a = a.toCharArray();
-        for(int i = rev_a.length-1; i>=0; i--)
+        ArrayList<String> myArrayL = new ArrayList<>();
+        myArrayL.add("Array1");
+        myArrayL.add("Array2");
+//        System.out.println(myArrayL);
+        for(String a : myArrayL)
         {
-            System.out.print(rev_a[i]);
-
+            System.out.println(a);
         }
-
+        myArrayL.remove(1);
+        System.out.println(myArrayL);
+        System.out.println(myArrayL.indexOf("Array1"));
     }
 }
